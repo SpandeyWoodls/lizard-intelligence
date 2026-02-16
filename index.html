@@ -1729,7 +1729,12 @@
       .why-not-grid { grid-template-columns: 1fr; }
       .species-cards { grid-template-columns: 1fr; }
       .nav-links { display: none; }
+      .nav-toggle { display: block; }
       .answer-stat-row { justify-content: center; }
+      .timeline-line { left: 24px; }
+      .tl-event, .tl-event:nth-child(even) { flex-direction: row; gap: 1.5rem; }
+      .tl-event:nth-child(even) .tl-content { text-align: left; }
+      .tl-dot { margin-left: 16px; }
       .scale-row { grid-template-columns: 130px 1fr 40px; gap: 0.8rem; }
       .scale-name { font-size: 0.8rem; }
       .compare-detail-grid { grid-template-columns: 1fr; }
@@ -1771,6 +1776,9 @@
 </head>
 <body>
 
+  <!-- Page Progress Bar -->
+  <div class="page-progress" id="pageProgress" aria-hidden="true"></div>
+
   <!-- Skip to Content (Accessibility) -->
   <a href="#answer" class="skip-link">Skip to main content</a>
 
@@ -1797,7 +1805,26 @@
       <li><a href="#quiz">Quiz</a></li>
       <li><a href="#references">Research</a></li>
     </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
+    <div class="mobile-menu-label">Navigate</div>
+    <a href="#answer" class="mm-link">The Answer</a>
+    <a href="#comparison" class="mm-link">Brain Comparison</a>
+    <a href="#capabilities" class="mm-link">Capabilities</a>
+    <a href="#why-not" class="mm-link">The Barriers</a>
+    <a href="#species" class="mm-link">Smartest Species</a>
+    <a href="#scale" class="mm-link">Intelligence Scale</a>
+    <a href="#timeline" class="mm-link">Timeline</a>
+    <a href="#compare-tool" class="mm-link">Compare Tool</a>
+    <a href="#brain-viz" class="mm-link">Brain Size</a>
+    <a href="#quiz" class="mm-link">Quiz</a>
+    <a href="#references" class="mm-link">Research</a>
+  </div>
 
   <!-- ═══════ HERO ═══════ -->
   <main>
